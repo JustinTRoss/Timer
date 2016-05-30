@@ -1,7 +1,7 @@
 var React = require('react'),
 	ReactDOM = require('react-dom');
 
-var timer = React.createClass({
+var Timer = React.createClass({
 	getInitialState: function() {
 		return {elapsedTime: 0};
 	},
@@ -23,14 +23,14 @@ var timer = React.createClass({
 		var elapsedTime = Math.round(this.state.elapsedTime / 100);
 
 		var seconds = (elapsedTime / 10).toFixed(1);
-		return (
-			<div>Elapsed Time: <b>{seconds} seconds</b></div>
-		);
+
+		return	<div>Elapsed Time: <b>{seconds} seconds</b></div>;
 	}
 });
 
 ReactDOM.render(
-	<timer startTime = {Date.now()} />,
-	document.getElementById('main'));
+	<Timer startTime={Date.now()} />,
+	document.getElementById("main")
+);
 
-module.exports = timer;
+module.exports = Timer;

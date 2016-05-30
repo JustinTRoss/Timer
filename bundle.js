@@ -47,8 +47,8 @@
 	var React = __webpack_require__(1),
 	    ReactDOM = __webpack_require__(38);
 
-	var timer = React.createClass({
-		displayName: 'timer',
+	var Timer = React.createClass({
+		displayName: 'Timer',
 
 		getInitialState: function () {
 			return { elapsedTime: 0 };
@@ -71,6 +71,7 @@
 			var elapsedTime = Math.round(this.state.elapsedTime / 100);
 
 			var seconds = (elapsedTime / 10).toFixed(1);
+
 			return React.createElement(
 				'div',
 				null,
@@ -85,9 +86,9 @@
 		}
 	});
 
-	ReactDOM.render(React.createElement('timer', { startTime: Date.now() }), document.getElementById('main'));
+	ReactDOM.render(React.createElement(Timer, { startTime: Date.now() }), document.getElementById("main"));
 
-	module.exports = timer;
+	module.exports = Timer;
 
 /***/ },
 /* 1 */
